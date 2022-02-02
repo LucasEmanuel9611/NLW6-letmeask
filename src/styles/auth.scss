@@ -42,6 +42,8 @@
         justify-content: center
     }
 
+    
+
     .main-content{
         display: flex;
         flex-direction: column;
@@ -54,6 +56,12 @@
         // tag > permite estilizar apenas um nível abaixo
         > img {
             align-self: center;
+        }
+
+        h2{
+            font-size: 24px;
+            margin: 61px 0px 24px;
+            font-familly: 'Poppins', sans-serif;
         }
 
         form{
@@ -74,9 +82,45 @@
                 width: 100%;
             }
         }
+
+        p {
+            font-size: 14px;
+            color: #737380;
+            margin-top: 16px;
+    
+            a{
+                color: #e559f9;
+            }
+        }
     }
 
-    .separator{
+    .create-rom{
+        margin-top: 64px;
+        height: 50px;
+        border-radius: 8px;
+        font-weight: 500;
+        background: #ea4335;
+        color: #FFFFFF;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        border: 0;
+
+        transition: filter 0.2s;
+
+        img{
+            margin-right: 8px;
+        }
+
+        &:hover{
+            filter: brightness(0.9);
+        }
+    }
+
+    .separator {
         font-size: 14px;
         color: #a8a8b3;
 
