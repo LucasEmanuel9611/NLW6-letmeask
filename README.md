@@ -1,9 +1,32 @@
-async function login(){
-    if(condition){
-        //casoa chamada com await dê errado o restante do código não 
-        //será executado apenas um catch se houver
-        await apiCall
-    }
-}
+firebase 
+hacks css:
+
+    gap
+
+    > em uma estilização
+
+    &::before{
+
+    &::after{
+
+    &:not(:disabled):hover{
+
+    &::disabled{
+
+    > :last-child {
+
+    //quando estiver com essa classe
+    &.outlined{
+
+
+melhora no uso de sass
+
+context api --> sempre que eu precisar de dados compartilhados entre components distantes
+
+hooks cstomizados --> sempre que precisar de uma funcionalidade em vários lugares da aplicação
+
+metodo some()
+
+19:09
 
 -Mv6DCUG_q8l7iCpeKcA
