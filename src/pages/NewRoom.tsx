@@ -35,6 +35,7 @@ export function NewRoom() {
 
     navigate(`/rooms/${firebaseRoom.key}`)
   }
+  
   return (
     <div id="page-auth">
       {/* <h1>{user?.id}</h1> */}
