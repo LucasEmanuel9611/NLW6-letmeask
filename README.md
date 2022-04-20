@@ -1,5 +1,10 @@
 <center>  <h1>LETMEASK</h1> </center>
 
+<img src="https://github.com/LucasEmanuel9611/NLW6-letmeask/blob/master/src/assets/Login.png" alt="Tela de login"/>
+<div > 
+  <img src="https://github.com/LucasEmanuel9611/NLW6-letmeask/blob/master/src/assets/home-admin.png" alt="img Home"/>
+  <img src="https://github.com/LucasEmanuel9611/NLW6-letmeask/blob/master/src/assets/home-user.png" alt="img Home"/>
+</div>
 
 ## 🧪 Tecnologias Utlizadas
 
