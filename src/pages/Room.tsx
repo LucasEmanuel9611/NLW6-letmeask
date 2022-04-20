@@ -8,6 +8,9 @@ import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
 import { Question } from "../components/Question";
 import { useRoom } from "../hooks/useRoom";
+import editImg from "../@types/assets/edit.png";
+import starImg from "../@types/assets/star.png";
+import Modal from "react-modal";
 
 type RoomParams = {
   id: string;
@@ -19,6 +22,7 @@ export function Room() {
   const { user } = useAuth();
   const { questions, title } = useRoom(roomId!);
   const [newQuestion, setNewQuestion] = useState("");
+  const [isOpen, setOpen] = useState(true);
 
   async function handleSendQuestion(e: React.FormEvent) {
     e.preventDefault();
@@ -64,7 +68,10 @@ export function Room() {
       <header>
         <div className="content">
           <img src={logoImg} alt="logo" />
-          <RoomCode code={roomId!} />
+          <div>
+            <RoomCode code={roomId!} />
+            <Button onClick={() => setOpen(true)}>Encerrar sala</Button>
+          </div>
           {/* a exclamação dia que algo não é nulo mesmo que pareça */}
         </div>
       </header>
@@ -96,7 +103,7 @@ export function Room() {
             </Button>
           </div>
         </form>
-        <div className="question-list">
+        <div className="question-list" style={{ marginBottom: 80 }}>
           {questions.map((item) => (
             <Question
               key={item.id}
@@ -131,10 +138,84 @@ export function Room() {
                   </svg>
                 </button>
               )}
+              <button
+                className={`like-button `}
+                type="button"
+                aria-label="Editar"
+                // onClick={() => handleLikeQuestion(item.id, item.likeId)}
+              >
+                <img
+                  src={editImg}
+                  alt="remover pergunta"
+                  style={{ width: 20, marginLeft: 15 }}
+                />
+              </button>
+
+              <button
+                className={`like-button `}
+                type="button"
+                aria-label="Editar"
+                // onClick={() => handleLikeQuestion(item.id, item.likeId)}
+              >
+                <img
+                  src={starImg}
+                  alt="remover pergunta"
+                  style={{ width: 20, marginLeft: 15 }}
+                />
+              </button>
             </Question>
           ))}
+          <Button
+            type="submit"
+            style={{
+              background: "lime",
+              marginTop: 20,
+            }}
+          >
+            Enviar superchat
+          </Button>
         </div>
       </main>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setOpen(false)}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+      >
+        <div
+          style={{
+            width: 500,
+            height: 500,
+            background: "#f1f1f1",
+            padding: 30,
+            borderRadius: 8,
+            display: "flex",
+            justifyContent: "space-around",
+            flexDirection: "column",
+          }}
+        >
+          <p style={{ color: "#333", fontSize: 19, alignSelf: "center" }}>
+            Deixa sua opnião sobre o aplicativo{" "}
+          </p>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+            }}
+          >
+            <img src={starImg} style={{ height: 30, width: 30 }} />
+            <img src={starImg} style={{ height: 30, width: 30 }} />
+            <img src={starImg} style={{ height: 30, width: 30 }} />
+            <img src={starImg} style={{ height: 30, width: 30 }} />
+            <img src={starImg} style={{ height: 30, width: 30 }} />
+          </div>
+          <textarea style={{ height: 150, border: 0, borderRadius: 5 }} />
+          <Button>Enviar Avaliação</Button>
+        </div>
+      </Modal>
     </div>
   );
 }
